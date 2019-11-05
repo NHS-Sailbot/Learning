@@ -90,12 +90,38 @@ int my_func() {
 When you get the return value back from the function into where it was called from, 
 the value can either be assigned to something or even just discarded. 
 
+When the return value of `my_func` is not used, it is still loaded into the appropriate
+register (assuming it's not optimized away) but nothing is done with the value in that
+register. I plan on talking about memory and how the CPU works in the future, so it is 
+completely alright if you don't know what I mean when I say 'register'.
+
 ```cpp
 int main() {
 	// notice the type of the variable is the same 
 	// as the return type of 'my_func'. 
 	// 'my_variable' will be assigned the value 5.
 	int my_variable = my_func();
+
+	// 'my_func' can also be called without it's 
+	// return value being used. 
+	my_func();
 }
+
 // Compilation instructions are inside example3.cpp
+```
+
+Finally, I will give an example of a function that may be useful.
+
+```cpp
+
+int cube_volume(int side_length) {
+	return side_length * side_length * side_length;
+}
+
+int main() {
+    // v1 is assigned the value 5^3 or 125
+	int v1 = cube_volume(5);
+}
+
+// Compilation instructions are inside example4.cpp
 ```
