@@ -1,7 +1,6 @@
 # Functions
 
 ## How functions are used.
-
 Functions are a way to organize and modularize our code.
 They allow us to write some procedure once, and have an
 easy to write (and easy to remember) alias when we require
@@ -34,7 +33,6 @@ two things to it:
 - A return type
 
 ## Parameters
-
 Function parameters allow the user to pass data from where they're calling the 
 function to inside the function where the function can use the data however it likes.
 
@@ -60,9 +58,13 @@ int main() {
 ```
 
 ## Return types
-
 Function return types allow the function to pass data from inside the function
 back to where it was called from.
+Functions are a way to organize and modularize our code.
+They allow us to write some procedure once, and have an
+easy to write (and easy to remember) alias when we require
+such functionality.
+
 
 A function's return type is listed first, with the name or alias
 following. When a return type is given to a function, it must return a value.
@@ -113,7 +115,6 @@ int main() {
 Finally, I will give an example of a function that may be useful.
 
 ```cpp
-
 int cube_volume(int side_length) {
 	return side_length * side_length * side_length;
 }
