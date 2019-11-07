@@ -32,12 +32,12 @@ to the byte.
 ### A list of the different sizes of all the different types:
 type        | size | memory representation
 ------------|-----:|----------------------
-`bool`      |    8 | [Integral](#The-binary-number-system:)
-`char`      |    8 | [Integral](#The-binary-number-system:)
-`short`     |   16 | [Integral](#The-binary-number-system:)
-`int`       |   32 | [Integral](#The-binary-number-system:)
-`long`      |  *32 | [Integral](#The-binary-number-system:)
-`long long` |   64 | [Integral](#The-binary-number-system:)
+`bool`      |    8 | [Integral](#Integers-and-the-binary-number-system:)
+`char`      |    8 | [Integral](#Integers-and-the-binary-number-system:)
+`short`     |   16 | [Integral](#Integers-and-the-binary-number-system:)
+`int`       |   32 | [Integral](#Integers-and-the-binary-number-system:)
+`long`      |  *32 | [Integral](#Integers-and-the-binary-number-system:)
+`long long` |   64 | [Integral](#Integers-and-the-binary-number-system:)
 `float`     |   32 | [Floating point](#Floating-point-numbers-in-memory:)
 `double`    |   64 | [Floating point](#Floating-point-numbers-in-memory:)
 
@@ -47,9 +47,10 @@ storing a `1` or a `0` is trivial, as well as because implimenting circuitry to 
 on `1`s and `0`s is much simpler. A number in memory is a consecutive string of bits. As to how 
 these bits are interpreted is dependent on the aforementioned type of memory representation.
 
-There are two main memory representation types on most modern systems, **Integral** and **Floating point**.
+There are two main memory representation types on most modern systems, 
+[Integral](#Integers-and-the-binary-number-system:) and [Floating point](#Floating-point-numbers-in-memory:).
 
-### The binary number system:
+### Integers and the binary number system:
 Integers are stored in memory in a very familiar way to how we think of numbers from day to day.
 When you think of counting, you probably think of '0, 1, 2, 3, ...' and that each consecutive number
 represents a quantity 1 greater than the previous. Something to note is that we do not have a unique
