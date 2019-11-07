@@ -138,7 +138,7 @@ number, such as `3.16 * 10^4`. In such a case, with an exponent of 2, each hundr
 would represent a whole integer, and increasing the exponent would render the hundredths in the multiplier
 even less precise.
 
-![Diagram of floating point accuracy per whole number](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjmvr_D4NblAhVIo1kKHT_EAUUQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttp%253A%252F%252Fblog.reverberate.org%252F2014%252F09%252Fwhat-every-computer-programmer-should.html%26psig%3DAOvVaw2hFQoxV4ePR_W823DAECVs%26ust%3D1573169626700946&psig=AOvVaw2hFQoxV4ePR_W823DAECVs&ust=15731696267009461)
+![Diagram of floating point accuracy per whole number](http://blog.reverberate.org/img/FloatingPoint/FloatVsInteger1.png)
 
 Notice the precision falling below that of an integer when representing a number above 2^23, since the
 mantissa, or multiplier, in a 32 bit float consists of 23 bits, aka 23 binary 'decimal' places.
