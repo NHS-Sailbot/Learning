@@ -10,4 +10,4 @@ int main() {
 
 // to run example1.cpp, compile it with
 // `g++ example4.cpp -o example4.exe` and run `example4` on Windows or
-// `g++ example4.cpp -o example4` and run `./example4` on Linux
+// `g++ example4.cpp -o example4` and run `./example4` on Mac/Linux
