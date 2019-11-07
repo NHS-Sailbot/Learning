@@ -32,14 +32,14 @@ to the byte.
 ### A list of the different sizes of all the different types:
 type        | size | memory representation
 ------------|-----:|----------------------
-`bool`      |    8 | Integral
-`char`      |    8 | Integral
-`short`     |   16 | Integral
-`int`       |   32 | Integral
-`long`      |  *32 | Integral
-`long long` |   64 | Integral
-`float`     |   32 | Floating point
-`double`    |   64 | Floating point
+`bool`      |    8 | [Integral](#The-binary-number-system:)
+`char`      |    8 | [Integral](#The-binary-number-system:)
+`short`     |   16 | [Integral](#The-binary-number-system:)
+`int`       |   32 | [Integral](#The-binary-number-system:)
+`long`      |  *32 | [Integral](#The-binary-number-system:)
+`long long` |   64 | [Integral](#The-binary-number-system:)
+`float`     |   32 | [Floating point](#Floating-point-numbers-in-memory:)
+`double`    |   64 | [Floating point](#Floating-point-numbers-in-memory:)
 
 # So how does the computer store numbers?
 The computer stores numbers in memory with `1`s and `0`s. This is both because, technologically, 
@@ -49,7 +49,7 @@ these bits are interpreted is dependent on the aforementioned type of memory rep
 
 There are two main memory representation types on most modern systems, **Integral** and **Floating point**.
 
-### The binary number system: 
+### The binary number system:
 Integers are stored in memory in a very familiar way to how we think of numbers from day to day.
 When you think of counting, you probably think of '0, 1, 2, 3, ...' and that each consecutive number
 represents a quantity 1 greater than the previous. Something to note is that we do not have a unique

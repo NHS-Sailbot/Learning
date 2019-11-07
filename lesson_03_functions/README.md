@@ -29,8 +29,8 @@ This is nice to free up some repetition in our code, however it
 isn't very useful. To make `my_func` more useful, we can add 
 two things to it:
 
-- Parameters or 'arguments'
-- A return type
+- [Parameters or 'arguments'](#Parameters)
+- [A return type](#Return-types)
 
 ## Parameters
 Function parameters allow the user to pass data from where they're calling the 
