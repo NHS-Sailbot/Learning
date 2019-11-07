@@ -75,7 +75,7 @@ type          | maximum
  `*long`      |  *4,294,967,295
  `*long long` | ~18 quintillion
 
-##### the asterisk (*) before the types will be addressed after these next paragraphs.
+##### the asterisk (*) before the types will be addressed over these next paragraphs.
 
 This, however, does not account for negative numbers. An integer in memory that can hold a negative
 quantity has a slightly different representation than just the digits. One may think that it there is
@@ -112,6 +112,58 @@ in this case.
 Actually, by default, all integral types in C++ are signed. Because of this, to tell the compiler we 
 don't want a signed number, we write the keyword `unsigned` before the type. Unsigned numbers can hold
 the full range listed above, `0` to `2^N-1`, and signed numbers, while having the same breadth, have
-a range from `-2^(N-1)` to `2^(N-1).
+a range from `-2^(N-1)` to `2^(N-1)-1`. This is why there is an asterisk on the table above, since
+the actual maximum of, for example, a char is actually 127 instead of 255, even though there is still
+256 possible numbers.
 
 ## Floating point numbers in memory:
+
+Floating point numbers are much more complicated than integers. A great way to explain how the computer
+stores fractional quantities is scientific notation. For example, if you were to store a number in a 
+`float`, which consists of 32 bits, a portion of those bits (8 bits, according to the IEEE-754 standard) 
+would go to storing an exponent to which 2 is raised, as well as a portion (23 bits) for a multiplier
+(what they call a mantissa) and one bit for a sign. Custom circuitry is required both for doing 
+mathematical operations on floating point numbers, as well as converting to and from integers.
+
+If we think about scientific notation, it is standard to keep the multiplier out front only ranging from
+1 through 9.99. This is because a number less than one could be represented in the 1-9.99 by decreasing 
+the exponent by one, or increasing it on the opposite case. Since in base 2 we only have to think about
+having a number ranging from 1 through 1.99, the standard only stores the fractional part of the mantissa. 
+For example, if the computer wanted to store a 10.0 as a floating point number, it would 3 in the exponent
+portion, as well as 0.25 in the mantissa. This is because `(0.25 + 1) * 2^3` equals `10`.
+
+One thing to note about floating point numbers is that the precision as the number gets greater diminishes
+in the same way it would in scientific notation. Imagine having (in base 10) two decimal places for your
+number, such as `3.16 * 10^4`. In such a case, with an exponent of 2, each hundredth in the multiplier
+would represent a whole integer, and increasing the exponent would render the hundredths in the multiplier
+even less precise.
+
+![Diagram of floating point accuracy per whole number](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjmvr_D4NblAhVIo1kKHT_EAUUQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttp%253A%252F%252Fblog.reverberate.org%252F2014%252F09%252Fwhat-every-computer-programmer-should.html%26psig%3DAOvVaw2hFQoxV4ePR_W823DAECVs%26ust%3D1573169626700946&psig=AOvVaw2hFQoxV4ePR_W823DAECVs&ust=15731696267009461)
+
+Notice the precision falling below that of an integer when representing a number above 2^23, since the
+mantissa, or multiplier, in a 32 bit float consists of 23 bits, aka 23 binary 'decimal' places.
+
+Another very important thing to know about floating point numbers is that it falls into the same pitfalls
+as normal scientific notation, where it cannot even represent fractional quantities like how 1/3 (in base
+10), the decimal expansion is 0.333 repeating (Fun fact, 1/3 in binary is 0.01010101 repeating). This is
+important to be thinking about while writing your code because when writing a floating point literal into
+your code, such as `float x = 0.1`, you may think that `x` actually equals exactly `0.1`, however, the 
+binary representation of 0.1 is 0.000110011001100...
+
+Because of this, in the following program, the main function will return the value `2`.
+
+```cpp
+int main() {
+    float x = 0.1;
+    if (x * 10.0 == 1.0) { // This condition fails (is false)
+        return 1;
+    } else {
+        return 2; // This is what gets called
+    }
+}
+
+// Compilation instructions are inside example1.cpp
+```
+
+This is because multiplying 0.000110011001100.. (binary 0.1) by 1010 (binary 10) results in (in base 10)
+`1.000000014901..`. This is the same concept as multiplying 0.33333.. by 3 and getting 0.99999.., not 1.
