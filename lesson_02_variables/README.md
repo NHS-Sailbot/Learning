@@ -151,7 +151,7 @@ important to be thinking about while writing your code because when writing a fl
 your code, such as `float x = 0.1`, you may think that `x` actually equals exactly `0.1`, however, the 
 binary representation of 0.1 is 0.000110011001100...
 
-Because of this, in the following program, the main function will return the value `2`.
+Because of this, in the following program, the `main` function will return the value `2`.
 
 ```cpp
 int main() {
@@ -166,5 +166,31 @@ int main() {
 // Compilation instructions are inside example1.cpp
 ```
 
-This is because multiplying 0.000110011001100.. (binary 0.1) by 1010 (binary 10) results in (in base 10)
+This is because multiplying 0.000110011001100.. (base 10: 0.1) by 1010 (base 10: 10) results in (in base 10)
 `1.000000014901..`. This is the same concept as multiplying 0.33333.. by 3 and getting 0.99999.., not 1.
+
+Something interesting is that slightly changing the code above can change the output of the program.
+If instead of writing the multiplication operation inside the conditional portion of the `if` statement,
+we create a variable assigned the value of the multiplication, and then inside the conditional, check the
+value of that variable against `1.0`, the condition will actually succeed and `main` will return `2`.
+
+```cpp
+int main() {
+    float x = 0.1;
+    float x_times_10 = x * 10.0;
+    if (x_times_10 == 1.0) { // This condition succeeds (is true)
+        return 1; // This is what gets called
+    } else {
+        return 2;
+    }
+}
+
+// Compilation instructions are inside example2.cpp
+```
+
+This is because of the optimization stage of compilation. As I mentioned in Lesson 1: Compilers, during
+optimization, the compiler does something called "Constant folding", where values that are constant are
+evaluated at compile time. In this case, the compiler noticed that both `x` and `x_times_10` were constant
+values, and optimized the program by removing the multiplication operation from runtime. Because the 
+compiler is what converts our text in base 10 into computer readable binary, it is able to perform the
+multiplication before converting it to binary, coming up with the value `1.0` after the multiplication.

@@ -5,10 +5,10 @@ A compiler is a program that converts the human written code (in a high level la
 to machine code (a low level language). 
 
 There are four main steps for compilation:
-- Pre-processing
-- Tokenization
-- Syntactic verification
-- Code generation / Optimization 
+- [Pre-processing](#Pre-processing)
+- [Tokenization](#Tokenization)
+- [Syntactic verification](#Syntactic-verification)
+- [Code generation / Optimization](#Code-generation-and-Optimization)
 
 ## Pre-processing
 Instructions to the pre-processor can be written in code and are called pre-processing directives.
@@ -40,3 +40,11 @@ After pre-processing, all directives are removed for the next stage of compilati
 ## Tokenization
 During the tokenization stage of compilation, the compiler separates words and punctuation so that the 
 code can be "read" by the compiler.
+
+## Syntactic Verification
+
+...
+
+## Code generation and Optimization
+
+...

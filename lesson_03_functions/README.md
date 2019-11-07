@@ -126,3 +126,9 @@ int main() {
 
 // Compilation instructions are inside example4.cpp
 ```
+
+## So how are functions represented in memory?
+
+Well, the answer to this relies on how a program is represented in memory.
+
+...
