@@ -131,4 +131,39 @@ int main() {
 
 Well, the answer to this relies on how a program is represented in memory.
 
+To a computer, a program is a series of sequential instructions, for simplicity's sake,
+I will only address single threaded execution. A binary such as an `exe` file on windows 
+consists of raw machine instructions.
+
+There are many different instructions that a computer is able to do, and the concept of 
+programming is arranging those instructions in a meaningful way. Every single processsor 
+architecture has it's own set of instructions that it can run. This is why compilers are
+created, to convert our 'high level' code into raw instructions. Although one may know 
+all of the instructions a specific processor architecture, because every architecture
+has unique instructions, it's unfeasable to learn all the instructions for all the 
+architectures one is writing on. 
+
+Instead, for normal people who like programming on multiple architectures, it is much 
+more valuable to understand in a general sense a set of instructions that are likely 
+to exist on an architecture (or to know just one set and understand that it is only 
+applicable to said architecture).
+
+
+there will, pretty much always, be mathematical instructions such as:
+
+ uint | int  | float
+------|------|-------
+  add |  <-- | fadd
+  sub |  <-- | fsub
+  mul | imul | fmul
+  div | idiv | fdiv
+  inc |  <-- | n/a
+  dec |  <-- | n/a
+
+Control flow instructions
+
+ uint | int  | float
+------|------|-------
+  cmp |      |
+
 ...
