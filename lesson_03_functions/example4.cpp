@@ -8,6 +8,6 @@ int main() {
     int v1 = cube_volume(5);
 }
 
-// to run example1.cpp, compile it with
+// to run this example, compile it with
 // `g++ example4.cpp -o example4.exe` and run `example4` on Windows or
 // `g++ example4.cpp -o example4` and run `./example4` on Mac/Linux

@@ -14,6 +14,6 @@ int main() {
     my_func();
 }
 
-// to run example2.cpp, compile it with
+// to run this example, compile it with
 // `g++ example3.cpp -o example3.exe` and run `example3` on Windows or
 // `g++ example3.cpp -o example3` and run `./example3` on Mac/Linux

@@ -127,6 +127,38 @@ int main() {
 // Compilation instructions are inside example4.cpp
 ```
 
+There are many functions that are required on every platform by the language standard, 
+let's look at a few. In order to get access to these functions, we have to include the
+standard library header in which it is defined. 
+
+Since I haven't already talked about this, A header is just a file that contains code
+that is *intended* to be included by another source file. To include a header, we use
+the preprocessor directive `#include` which just copy/pastes (during compilation) the
+contents of the specified file *into* the source file containing the directive, at the
+place of the directive.
+
+One of the standard library headers is called `stdio.h`, which is short for standard 
+input/output. This header defines all the necessary code for printing to the console, 
+as well as getting input from the console.
+
+One function defined in this header is `printf`. This function prints a string to the
+console. The argument list, which consists of a single argument, "`const char *`" contains
+two data type modifiers that I have yet to talk about, which are `const` and **`*`**. I 
+will explain these modifiers in the future. The thing to know about this type is that it 
+represents a string of characters.
+
+To use `printf`, one just writes `printf(`, the string to print, and a `)`. For example,
+
+```cpp
+#include <stdio.h>
+
+int main() {
+	printf("Hello, World!\n");
+}
+
+// Compilation instructions are inside example5.cpp
+```
+
 ## So how are functions represented in memory?
 
 Well, the answer to this relies on how a program is represented in memory.
@@ -148,22 +180,6 @@ more valuable to understand in a general sense a set of instructions that are li
 to exist on an architecture (or to know just one set and understand that it is only 
 applicable to said architecture).
 
-
-there will, pretty much always, be mathematical instructions such as:
-
- uint | int  | float
-------|------|-------
-  add |  <-- | fadd
-  sub |  <-- | fsub
-  mul | imul | fmul
-  div | idiv | fdiv
-  inc |  <-- | n/a
-  dec |  <-- | n/a
-
-Control flow instructions
-
- uint | int  | float
-------|------|-------
-  cmp |      |
+For example, let's take the `cube_volume` function from a previous example, where 
 
 ...
