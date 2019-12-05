@@ -115,13 +115,13 @@ int main() {
 Finally, I will give an example of a function that may be useful.
 
 ```cpp
-int cube_volume(int side_length) {
-	return side_length * side_length * side_length;
+int area(int side_length) {
+	return side_length * side_length;
 }
 
 int main() {
-    // v1 is assigned the value 5^3 or 125
-	int v1 = cube_volume(5);
+    // a1 is assigned the value 5^2 or 25
+	int a1 = area(5);
 }
 
 // Compilation instructions are inside example4.cpp
@@ -158,28 +158,3 @@ int main() {
 
 // Compilation instructions are inside example5.cpp
 ```
-
-## So how are functions represented in memory?
-
-Well, the answer to this relies on how a program is represented in memory.
-
-To a computer, a program is a series of sequential instructions, for simplicity's sake,
-I will only address single threaded execution. A binary such as an `exe` file on windows 
-consists of raw machine instructions.
-
-There are many different instructions that a computer is able to do, and the concept of 
-programming is arranging those instructions in a meaningful way. Every single processsor 
-architecture has it's own set of instructions that it can run. This is why compilers are
-created, to convert our 'high level' code into raw instructions. Although one may know 
-all of the instructions a specific processor architecture, because every architecture
-has unique instructions, it's unfeasable to learn all the instructions for all the 
-architectures one is writing on. 
-
-Instead, for normal people who like programming on multiple architectures, it is much 
-more valuable to understand in a general sense a set of instructions that are likely 
-to exist on an architecture (or to know just one set and understand that it is only 
-applicable to said architecture).
-
-For example, let's take the `cube_volume` function from a previous example, where 
-
-...

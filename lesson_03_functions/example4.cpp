@@ -1,11 +1,10 @@
-
-int cube_volume(int side_length) {
-    return side_length * side_length * side_length;
+int area(int side_length) {
+    return side_length * side_length; //
 }
 
 int main() {
-    // v1 is assigned the value 5^3 or 125
-    int v1 = cube_volume(5);
+    // a1 is assigned the value 5^2 or 25
+    int a1 = area(5);
 }
 
 // to run this example, compile it with

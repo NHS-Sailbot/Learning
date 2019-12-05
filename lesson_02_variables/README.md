@@ -50,7 +50,7 @@ these bits are interpreted is dependent on the aforementioned type of memory rep
 There are two main memory representation types on most modern systems, 
 [Integral](#Integers-and-the-binary-number-system) and [Floating point](#Floating-point-numbers-in-memory).
 
-### Integers and the binary number system
+## Integers and the binary number system
 Integers are stored in memory in a very familiar way to how we think of numbers from day to day.
 When you think of counting, you probably think of '0, 1, 2, 3, ...' and that each consecutive number
 represents a quantity 1 greater than the previous. Something to note is that we do not have a unique
