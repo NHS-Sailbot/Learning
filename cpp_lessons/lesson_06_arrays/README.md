@@ -65,7 +65,7 @@ my_array[2] = 10; // will change the third element to 10
 Notice the indexing starts with zero, which is standard for many languages, and
 is for a reason that should be detailed in the lesson about pointers. Because
 it starts at zero, that means the last index (in this specific array) is specified
-using index `3` . Because of this, attempting to index this array with an index of
+using index `3`. Because of this, attempting to index this array with an index of
 `4` or greater will _invoke_ something called undefined behavior, or UB for short.
 Because the program we wrote does not necessarily own the memory immediately
 following the array we created, we could be attempting to read or write to memory
