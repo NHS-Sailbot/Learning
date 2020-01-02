@@ -1,6 +1,7 @@
 # Functions
 
-## How functions are used.
+## How functions are used
+
 Functions are a way to organize and modularize our code.
 They allow us to write some procedure once, and have an
 easy to write (and easy to remember) alias when we require
@@ -25,15 +26,16 @@ int main() {
 // Compilation instructions are inside example1.cpp
 ```
 
-This is nice to free up some repetition in our code, however it 
-isn't very useful. To make `my_func` more useful, we can add 
+This is nice to free up some repetition in our code, however it
+isn't very useful. To make `my_func` more useful, we can add
 two things to it:
 
 - [Parameters or 'arguments'](#Parameters)
 - [A return type](#Return-types)
 
 ## Parameters
-Function parameters allow the user to pass data from where they're calling the 
+
+Function parameters allow the user to pass data from where they're calling the
 function to inside the function where the function can use the data however it likes.
 
 ```cpp
@@ -58,13 +60,13 @@ int main() {
 ```
 
 ## Return types
+
 Function return types allow the function to pass data from inside the function
 back to where it was called from.
 Functions are a way to organize and modularize our code.
 They allow us to write some procedure once, and have an
 easy to write (and easy to remember) alias when we require
 such functionality.
-
 
 A function's return type is listed first, with the name or alias
 following. When a return type is given to a function, it must return a value.
@@ -73,7 +75,7 @@ This is done by typing `return` followed by the data to be returned.
 You'll notice that my example of `my_func` up until this point has had
 a return type of `void`, which is actually one of the only two times the keyword
 `void` can be used. In this case, the term void just means that the function would
-not return a value. 
+not return a value.
 
 As well as this, you may have noticed that the main function actually states it
 returns an int, however we never write a return statement inside of it. This is because
