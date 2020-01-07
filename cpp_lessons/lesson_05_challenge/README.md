@@ -1,14 +1,6 @@
 # Challenge 1: Ascii Art
 
-For this Lesson, instead of learning by reading, I would like to
-introduce a programming challenge to go over all the concepts learned
-up until now.
-
-For this challenge, I would like you to create a program that can either
-draw a line segment (diff. easy) or a triange to the console (diff. medium)
-
-When I say draw, I mean display in the console using ascii characters, for
-example, a 40x20 character image would look like this:
+For this Lesson, instead of learning by reading, I would like to introduce a programming challenge to go over all the concepts learned up until now. For this challenge, I would like you to create a program that can either draw a line segment (diff. easy) or a triange to the console (diff. medium) When I say draw, I mean display in the console using ascii characters, for example, a 40x20 character image would look like this:
 
 ```cpp
 ........................................
@@ -33,17 +25,12 @@ example, a 40x20 character image would look like this:
 ........................................
 ```
 
-Notice although the width of the image (in characters) is double that of the height,
-the percieved width and height are seemingly identical, that is because the vast
-majority of typefaces, especially monospace ones, have a character that is twice the
-height (in pixels) than width. To combat this, one would make an image of characters
-twice in width of their desired width to preserve aspect ratios.
+Notice although the width of the image (in characters) is double that of the height, the percieved width and height are seemingly identical, that is because the vast majority of typefaces, especially monospace ones, have a character that is twice the height (in pixels) than width. To combat this, one would make an image of characters twice in width of their desired width to preserve aspect ratios.
 
 ## Rules applicable to both difficulties
 
 - Image space should be normalized such that both axis range from 0-1
-- Changing the width and height (in characters) should only change the
-  definition of the generated image
+- Changing the width and height (in characters) should only change the definition of the generated image
 
 ## Line segment rules
 
@@ -51,7 +38,5 @@ twice in width of their desired width to preserve aspect ratios.
 
 ## Triangle rules
 
-- Points inside **AND** on the edge of the triange should be counted as inside
-  the triange
-- Changing the order of points and flipping the triange should not invalidate the
-  render.
+- Points inside **AND** on the edge of the triangle should be counted as inside the triangle
+- Changing the order of points and flipping the triangle should not invalidate the render.
