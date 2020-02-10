@@ -60,8 +60,80 @@ If the initial condition evaluates to true, the first compound statement code is
 
 ### Switch statements
 
+A switch statement's functionality is similar to an if statement, however it allows for an optimization on the hardware level for conditions. Say, for example, one would like to draw tiles to a screen, and needs some way to return the `texID` (which, let's say, is an `int`) of a tile based on its `tileID` (which is also an `int` in this theoretical example). Using an if statement to do this would look like this:
+
+```cpp
+int nullTexID = -1;
+int texID_0 = 1, texID_1 = 0, texID_2 = 4, texID_3 = 2;
+
+int getTexIDfromTileID(int tileID) {
+    if (tileID == 0) return texID_0;
+    if (tileID == 1) return texID_1;
+    if (tileID == 2) return texID_2;
+    if (tileID == 3) return texID_3;
+    return nullTexID;
+}
+```
+
+This, however, is actually really inefficient in the long run. If one were to have a lot of tiles/textures, and the `texID` in question were the last in the list, the computer would go through and do `N` if condition checks given `N` `tileID`'s. We could use a switch statement, in this case, to optimize our program. To write a switch statement, one puts the index to switch on in the parenthesis, and then a handful of case statements inside the braces. To use a switch statment in this example, it would look like this:
+
+```cpp
+int nullTexID = -1;
+int texID_0 = 1, texID_1 = 0, texID_2 = 4, texID_3 = 2;
+
+int getTexIDfromTileID(int tileID) {
+    switch (tileID) {
+        case 0:
+            return texID_0;
+        case 1:
+            return texID_1;
+        case 2:
+            return texID_2;
+        case 3:
+            return texID_3;
+        default:
+            return nullTexID;
+    }
+}
+```
+
+Notice the `default:` case at the end, allowing for an unknown `tileID` to map to a `nullTexID`. Note that the value inside the switch statement (and the case labels) must be integral. This is due to how the logic is evaluated. Also, the numbers in the case labels must be a _"Compile-time evaluable constant expression"_. More on this in [lesson 8](https://github.com/NHS-Sailbot/teaching_cpp/tree/master/cpp_lessons/lesson_08_type_mods). When the switch statment is run, the program is actually able to 'jump' a variable number of 'lines' in the program. This allows the program to check only 1 condition (whether or not the given index is inside the case range) and then just jump the number of lines ahead given in the original statement. In our example, with a tileID of 3, the program checks whether or not a tileID of 3 is one of the case labels, and then skips directly to it. This is a simplification of what actually happens, but know that given a contiguous integral range, the compiler can easily optimize away many condition checks, allowing for a faster program. If in our theoretical example, we actually needed a texID for, say, 10,000 sprites on the screen, every single frame of a program, we would want to minimize greatly the time it takes to run said function because it would get called 600,000 times a second, given 60 frames per second.
+
 ## Loops
+
+Loops allow us to do the same lines of code repeatedly. This is very useful for simplifying our code, allowing the programmer to not have to explicitly write out the function calls for an entire program.
+
+### While loops
+
+A while loop is the simplest kind of loop that we can write. A while loop runs the same set of code over and over until the given condition results in false. For example, say we would like to write a function that calculates the n-th fibonacci number given n.
+
+```cpp
+int fib(int n) {
+    int a = 0, b = 1;
+    while (n > 0) {
+        int tempB = b;
+        b += a;
+        a = tempB;
+        n--;
+    }
+    return a;
+}
+```
+
+In this function, we check whether or not `n` is greater than 0. If this evaluates to true, the loop runs, incrementing `a` and `b` to the next numbers in the sequence, and decrements `n`. Because this decrements `n` every loop, the code inside the loop will only run `n` times.
 
 ### For loops
 
-### While loops
+A for loop is the exact same thing as a while loop, and just provides a simpler way of writing one. In our previous example, we used a while loop to calculate the n-th element in the fibonacci sequence, and we could do the same in a for loop.
+
+```cpp
+int a = 0, b = 1;
+
+for (int n = 0; n < 7; n++) {
+    int tempB = b;
+    b += a;
+    a = tempB;
+}
+```
+
+this will loop through all the values of `n` between 0 and 6 (6 because 6 is the last integer _**less than**_ 7). This will calculate the 7th element in the sequence, which will reside in `a`. For loops are mainly used for things that are indexed sequentially, and will commonly be used with arrays [lesson 6](https://github.com/NHS-Sailbot/teaching_cpp/tree/master/cpp_lessons/lesson_06_arrays).

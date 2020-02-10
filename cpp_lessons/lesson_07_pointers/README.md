@@ -10,9 +10,9 @@ The variable `my_ptr` is a pointer. Note the spaces on either side of the asteri
 
 ```cpp
 int*my_ptr;
-// this,
+// or this:
 int* my_ptr;
-// or this
+// or this:
 int *my_ptr;
 ```
 
@@ -20,8 +20,7 @@ The way of writing this is personal preference, and there's a pretty even split 
 
 ```cpp
 int *my_ptr, *my_other_ptr;
-// Omitting the asterisk in my_other_ptr's declaration would
-// create an int, not an int pointer.
+// Omitting the asterisk in my_other_ptr's declaration would create an int, not an int pointer.
 ```
 
 Because of this, I see the 'pointer-ness' as being intrinsic to the variable and not the type, and thus associate the asterisk with the variable name and not the type. My justification aside, notation is mostly _point_-less and you may write it however you'd like.
@@ -72,9 +71,7 @@ int a = 10;
 int *b = &a;
 // using the reference operator '&' to get the address of variable 'a'.
 int c = *b;
-// using the dereference operator '*' to use the value pointed to by
-// variable 'b'. This will assign the value 10 to c, because 'b' points
-// to 'a', and a = 10
+// using the dereference operator '*' to use the value pointed to by variable 'b'. This will assign the value 10 to c, because 'b' points to 'a', and a = 10
 ```
 
 Note the two new operators, the reference operator `&` and the dereference operator `*`. Although the same character (`*`) is used to dereference as to declare a pointer, the compiler can tell which is being used based on context. As alluded to in the comments of the code, the reference operator must be used on something in code that is addressable. This is known as an l-value, a concept that people usually find very confusing when learning C++. The concept of an l-value, and its counterpart, r-value, are very simple in that they can be described as, 1. An l-value is any expression that results in something addressable in memory, and 2. an r-value is everything else. An example of an l-value is a variable name, since the variable is stored in memory, and an example of an r-value is a numeric or string literal, like `10` or `"Hello"`. l-values and r-values are important to know since it is common to see them referenced in compiler warnings or errors. On the other hand, the dereference operator must be used on a memory address, or more simply, a pointer.

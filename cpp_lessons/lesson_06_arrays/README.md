@@ -11,9 +11,7 @@ This, however, will not compile. This is because of specific hardware optimizati
 ```cpp
 int my_array[5];
 
-// One can also force the compiler to implicitly infer the size of the array
-// by giving a set of values to it. The set of numbers inside the braces
-// following the declaration are what is called an 'initializer list'
+// One can also force the compiler to implicitly infer the size of the array. By giving a set of values to it. The set of numbers inside the braces following the declaration are what is called an 'initializer list'
 
 int my_array[] = {1, 4, 2, 3, 7};
 ```

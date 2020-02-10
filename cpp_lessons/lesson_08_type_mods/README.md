@@ -24,11 +24,11 @@ For pointers, one can apply `const`-ness in two different ways, one applying to 
 
 ```cpp
 const int a1 = 10, a2 = 15;
-const int *const b = a1;
+const int *const b = &a1;
 
 // both of these next lines are illegal
 *b = 20; // error, assignment to a const int
-b = a2; // error, assignment to a *const
+b = &a2; // error, assignment to a *const
 
 // The only thing doable in this case is reading
 // from b and the contents pointed to by b
