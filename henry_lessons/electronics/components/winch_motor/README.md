@@ -19,6 +19,7 @@
  - IN2 (Direction switch 2) Mega Digital Pin **UNDECIDED**
 
 ```cpp
+// TODO: add the code from the master code
 void setup() {
 
 }

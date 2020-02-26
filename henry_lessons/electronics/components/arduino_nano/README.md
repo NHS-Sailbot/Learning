@@ -1,3 +1,18 @@
-# Arduino  Nano
+![Arduino Nano Image](https://store-cdn.arduino.cc/usa/catalog/product/cache/1/image/500x375/f8876a31b63532bbba4e781c30024a0a/A/0/A000005_front_2.jpg)
 
-The nano has 8 programmable analog pins (labelled 0-7) and 12 programmable digital pins (labelled 2-13). We intend to use 6 (0-5) of the analog pins to read the incoming data from the remote control receiver.
+# Arduino Nano
+
+ Description | |
+:---|---|---
+[Digital Pin](#Digital-pins) Count | 22
+[Analog Pin](#Analog-pins) Count | 8 
+
+[Arduino Store Listing](https://store.arduino.cc/usa/arduino-nano)
+
+## Digital pins
+
+The Nano has 22 programmable digital pins, 6 of which support PWM output. Pins ??-?? support PWM, ??-?? are Serial ports, and the rest are GPIO.
+
+## Analog pins
+
+The Nano has 16 programmable analog pins, labelled A0-A15. All these ports support IO.

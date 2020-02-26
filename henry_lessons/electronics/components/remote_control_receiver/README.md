@@ -19,6 +19,7 @@ Disregard the fact that there are only 2x5 pins on the receiver's header in the 
 (an `*` means unused)
 
 ```cpp
+// TODO: add the code from the master code
 void setup() {
 
 }
